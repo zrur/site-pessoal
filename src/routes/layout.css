@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+:root {
+  --concreto: #D8D4CC;
+  --grafite: #1C1A17;
+  --cal: #F4F2EC;
+  --azulejo: #2447A0;
+  --sombra: #B9B4AA;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--concreto);
+  color: var(--grafite);
+  font-family: 'Zilla Slab', serif;
+  font-size: 1.075rem;
+  line-height: 1.65;
+}
+
+a { color: var(--azulejo); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--azulejo);
+  outline-offset: 3px;
+}
+
+.prose {
+  font-family: 'Zilla Slab', serif;
+  font-size: 1.075rem;
+  line-height: 1.75;
+  color: var(--grafite);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose h1 { font-size: 2.25rem; }
+.prose h2 { font-size: 1.6rem; border-bottom: 2px solid var(--grafite); padding-bottom: 0.4rem; }
+.prose h3 { font-size: 1.25rem; }
+
+.prose p { margin-bottom: 1.25rem; }
+
+.prose a { color: var(--azulejo); text-decoration: underline; text-underline-offset: 3px; }
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li { margin-bottom: 0.4rem; }
+
+.prose blockquote {
+  border-left: 4px solid var(--azulejo);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+.prose code {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85em;
+  background: var(--sombra);
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
+}
+
+.prose pre {
+  background: var(--grafite);
+  color: var(--cal);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.prose img {
+  max-width: 100%;
+  border: 2px solid var(--grafite);
+}
+
+.prose strong { font-weight: 700; }
+.prose em { font-style: italic; }
+
+.prose hr {
+  border: none;
+  border-top: 2px solid var(--grafite);
+  margin: 2.5rem 0;
+}
