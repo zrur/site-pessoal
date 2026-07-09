@@ -47,11 +47,13 @@
 		else if (command === 'h3') chain.toggleHeading({ level: 3 }).run()
 		else if (command === 'setLink') {
 			const url = prompt('URL do link:')
-			if (url) editor.chain().focus().setLink({ href: url }).run()
+			if (url && /^https?:\/\//i.test(url)) editor.chain().focus().setLink({ href: url }).run()
+			else if (url) alert('Apenas URLs começando com http:// ou https:// são permitidas.')
 		}
 		else if (command === 'addImage') {
 			const url = prompt('URL da imagem:')
-			if (url) editor.chain().focus().setImage({ src: url }).run()
+			if (url && /^https?:\/\//i.test(url)) editor.chain().focus().setImage({ src: url }).run()
+			else if (url) alert('Apenas URLs começando com http:// ou https:// são permitidas.')
 		}
 	}
 </script>

@@ -4,7 +4,7 @@ import type { PageServerLoad } from './$types'
 export const load: PageServerLoad = async ({ params, locals: { supabase } }) => {
 	const { data: pub } = await supabase
 		.from('publicacoes')
-		.select('*')
+		.select('id, tipo, titulo, resumo, data, slug, arquivo_path')
 		.eq('slug', params.slug)
 		.eq('publicado', true)
 		.eq('tipo', 'pdf')
