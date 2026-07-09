@@ -29,6 +29,8 @@
 		"@tiptap/extension-image": "^3.27.3",
 		"@tiptap/extension-link": "^3.27.3",
 		"@tiptap/starter-kit": "^3.27.3",
-		"cookie": "^1.1.1"
+		"@types/dompurify": "^3.0.5",
+		"cookie": "^1.1.1",
+		"dompurify": "^3.4.11"
 	}
 }

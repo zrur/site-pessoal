@@ -24,9 +24,9 @@
 
 	onMount(() => {
 		if (cobogo) {
-			for (let i = 0; i < 42; i++) {
-				cobogo.appendChild(document.createElement('span'))
-			}
+			const frag = document.createDocumentFragment()
+			for (let i = 0; i < 42; i++) frag.appendChild(document.createElement('span'))
+			cobogo.appendChild(frag)
 		}
 	})
 </script>
@@ -34,6 +34,14 @@
 <svelte:head>
 	<title>Arthur Ramos dos Santos — pesquisa & escrita</title>
 	<meta name="description" content="Arquivo público de Arthur Ramos dos Santos: artigos, papers e documentos sobre proteção de menores, aprendizado federado, política digital e futebol." />
+	<link rel="canonical" href="https://arthuramosantos.com.br/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://arthuramosantos.com.br/" />
+	<meta property="og:title" content="Arthur Ramos dos Santos — pesquisa & escrita" />
+	<meta property="og:description" content="Arquivo público de Arthur Ramos dos Santos: artigos, papers e documentos sobre proteção de menores, aprendizado federado, política digital e futebol." />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Arthur Ramos dos Santos — pesquisa & escrita" />
+	<meta name="twitter:description" content="Arquivo público de Arthur Ramos dos Santos: artigos, papers e documentos sobre proteção de menores, aprendizado federado, política digital e futebol." />
 </svelte:head>
 
 <header class="topo wrap">
@@ -147,7 +155,7 @@
 	.hero { padding: 3.5rem 0 0; }
 	.hero h1 {
 		font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800;
-		font-size: clamp(2.6rem, 8vw, 5.4rem); line-height: .95;
+		font-size: clamp(2rem, 8vw, 5.4rem); line-height: .95;
 		letter-spacing: -.02em; text-transform: uppercase;
 	}
 	.hero h1 :global(.fino) { color: var(--azulejo); }

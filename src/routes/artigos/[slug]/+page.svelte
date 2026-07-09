@@ -1,6 +1,8 @@
 <script lang="ts">
+	import DOMPurify from 'dompurify'
 	let { data } = $props()
 	const a = data.artigo
+	const conteudoSeguro = DOMPurify.sanitize(a.conteudo ?? '')
 </script>
 
 <svelte:head>
@@ -29,7 +31,7 @@
 		</header>
 
 		<div class="prose">
-			{@html a.conteudo}
+			{@html conteudoSeguro}
 		</div>
 	</article>
 
@@ -91,7 +93,8 @@
 
 	.resumo {
 		font-size: 1.1rem;
-		color: #444;
+		color: var(--grafite);
+		opacity: .7;
 		max-width: 48em;
 		margin-bottom: 1.5rem;
 	}

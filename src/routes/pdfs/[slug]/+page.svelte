@@ -37,9 +37,10 @@
 				src={pdfUrl}
 				title={pub.titulo}
 				width="100%"
-				height="800"
-				style="border: 2px solid var(--grafite);"
-			></iframe>
+				style="border: 2px solid var(--grafite); height: clamp(400px, 80vh, 900px);"
+			>
+				<p>Seu navegador não suporta visualização de PDF. <a href={pdfUrl} download>Baixe o arquivo aqui</a>.</p>
+			</iframe>
 		</div>
 	{:else}
 		<p class="erro">Arquivo não disponível no momento.</p>
@@ -98,7 +99,8 @@
 
 	.resumo {
 		font-size: 1rem;
-		color: #444;
+		color: var(--grafite);
+		opacity: .7;
 		margin-bottom: 1.25rem;
 	}
 
@@ -118,6 +120,7 @@
 	.btn-download:hover { border-color: var(--azulejo); color: var(--azulejo); }
 
 	.pdf-viewer { margin-bottom: 2rem; }
+	.pdf-viewer iframe { display: block; width: 100%; }
 
 	.erro {
 		font-family: 'Space Mono', monospace;

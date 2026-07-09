@@ -7,7 +7,7 @@ import { createClient } from '@supabase/supabase-js'
 export const load: PageServerLoad = async ({ params, locals: { supabase } }) => {
 	const { data: pub } = await supabase
 		.from('publicacoes')
-		.select('*')
+		.select('id, tipo, titulo, resumo, data, conteudo, slug, href_externo, arquivo_path, publicado')
 		.eq('id', params.id)
 		.single()
 
