@@ -43,10 +43,15 @@ export const actions: Actions = {
 		let arquivo_path: string | undefined = undefined
 
 		if (tipo === 'pdf' && arquivo && arquivo.size > 0) {
-			const adminClient = createClient(PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
-			const ext = arquivo.name.split('.').pop()
-			const path = `${slug}-${Date.now()}.${ext}`
+			const allowedMime = 'application/pdf'
 			const bytes = await arquivo.arrayBuffer()
+			const magic = new Uint8Array(bytes.slice(0, 4))
+			const isPdf = magic[0] === 0x25 && magic[1] === 0x50 && magic[2] === 0x44 && magic[3] === 0x46
+			if (!isPdf || arquivo.type !== allowedMime) {
+				return fail(400, { error: 'Apenas arquivos PDF são permitidos.' })
+			}
+			const adminClient = createClient(PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
+			const path = `${slug}-${Date.now()}.pdf`
 
 			const { error: uploadError } = await adminClient.storage
 				.from('pdfs')
