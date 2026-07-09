@@ -58,7 +58,7 @@
 <main class="wrap">
 	<div class="hero">
 		<h1>Arthur Ramos<br>dos <span class="fino">Santos</span></h1>
-		<p class="lede">Pesquisador independente. Escrevo sobre proteção de menores no ambiente digital, aprendizado federado, política pública e, de vez em quando, futebol — sempre com a mesma pergunta: como se desenha um sistema que funcione sem depender da boa vontade de quem o opera.</p>
+		<p class="lede">Pesquisador independente. Escrevo sobre proteção de menores no ambiente digital, aprendizado federado, política pública e, de vez em quando, futebol, sempre com a mesma pergunta: como se desenha um sistema que funcione sem depender da boa vontade de quem o opera.</p>
 		<p class="assina">arquivo público de artigos, papers e documentos · desde 2026</p>
 		<div class="cobogo" aria-hidden="true" bind:this={cobogo}></div>
 	</div>
@@ -112,7 +112,7 @@
 		<div class="sobre-grid">
 			<div>
 				<p>Nasci e cresci em Jandira, na periferia da Grande São Paulo. Formado em Análise e Desenvolvimento de Sistemas pela FIAP (ProUni), com pós-graduação em Cloud &amp; AI DevOps pela Impacta.</p>
-				<p style="margin-top:.9rem">Minha pesquisa principal é o SENTINELA-TREVO, um framework de aprendizado federado para detecção comportamental de exposição precoce de menores a conteúdo adulto — publicado como preprint no SSRN. O interesse comum a tudo que escrevo é desenho institucional: sistemas, incentivos e o que acontece quando eles falham.</p>
+				<p style="margin-top:.9rem">Minha pesquisa principal é o SENTINELA-TREVO, um framework de aprendizado federado para detecção comportamental de exposição precoce de menores a conteúdo adulto, publicado como preprint no SSRN. O interesse comum a tudo que escrevo é desenho institucional: sistemas, incentivos e o que acontece quando eles falham.</p>
 			</div>
 			<div class="temas">
 				<strong>TEMAS</strong>
