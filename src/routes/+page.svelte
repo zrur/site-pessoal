@@ -130,7 +130,7 @@
 		<p>Leituras, críticas e propostas de colaboração são bem-vindas.</p>
 		<div class="contato-links">
 			<a href="https://github.com/zrur" rel="me">GitHub</a>
-			<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm" rel="me">SSRN</a>
+			<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6461080" rel="me">SSRN</a>
 			<a href="mailto:arthuramossan@gmail.com">E-mail</a>
 		</div>
 	</section>
