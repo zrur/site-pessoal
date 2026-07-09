@@ -85,8 +85,9 @@
 			<p class="vazio">Nada publicado nesta categoria ainda — em breve.</p>
 		{:else}
 			<ul class="pubs">
-				{#each visiveis as p (p.id)}
-					<li class="pub-item">
+				{#each visiveis as p, i (p.id)}
+					<li class="pub-item tipo-{p.tipo}">
+						<span class="num">{String(i + 1).padStart(2, '0')}</span>
 						<a
 							class="pub"
 							href={href(p)}
@@ -208,6 +209,8 @@
 
 	ul.pubs { list-style: none; padding: 0; }
 	.pub-item {
+		display: flex;
+		align-items: stretch;
 		background: var(--cal);
 		border: 2px solid var(--grafite);
 		margin-bottom: .9rem;
@@ -218,9 +221,32 @@
 		transform: translate(-2px, -2px);
 		box-shadow: 7px 7px 0 var(--sombra);
 	}
+	.num {
+		font-family: 'Space Mono', monospace;
+		font-size: .72rem;
+		font-weight: 700;
+		letter-spacing: .04em;
+		color: var(--cal);
+		background: var(--sombra);
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		padding: 1rem .45rem;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		min-width: 2rem;
+		flex-shrink: 0;
+		border-right: 2px solid var(--grafite);
+		transition: background .15s;
+	}
+	.tipo-artigo .num { background: var(--azulejo); }
+	.tipo-paper .num { background: var(--grafite); }
+	.tipo-pdf .num { background: var(--sombra); color: var(--grafite); }
+	.pub-item:hover .num { filter: brightness(1.15); }
 	.pub-item a.pub {
 		display: block; text-decoration: none; color: var(--grafite);
 		padding: 1.1rem 1.25rem;
+		flex: 1;
 	}
 	.pub-item a.pub:hover h3 { color: var(--azulejo); text-decoration: underline; text-decoration-thickness: 2px; }
 
